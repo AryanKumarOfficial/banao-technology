@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 const Footer = ({ className = "" }) => {
     return (
         <div
-            className={`self-stretch bg-grey-white flex flex-col items-start justify-start pt-[3.75rem] px-[0rem] pb-[0rem] box-border gap-[3.75rem] max-w-full text-left text-[0.875rem] text-grey-darkest font-text-sm-bold mq750:gap-[1.875rem] mq450:pt-[2.438rem] mq450:box-border ${className}`}
+            className={`container mx-auto self-stretch bg-grey-white flex flex-wrap flex-col items-start justify-start pt-[3.75rem] px-[0rem] pb-[0rem] box-border gap-[3.75rem] max-w-full text-left text-[0.875rem] text-grey-darkest font-text-sm-bold mq750:gap-[1.875rem] mq450:pt-[2.438rem] mq450:box-border ${className}`}
         >
-            <div className="self-stretch h-[23.75rem] relative bg-grey-white hidden" />
-            <div className="w-[88.813rem] flex flex-row items-start justify-center py-[0rem] px-[1.25rem] box-border max-w-full">
-                <div className="w-[76.063rem] flex flex-col items-start justify-start gap-[0.125rem] max-w-full">
+            <div className=" container mx-auto self-stretch h-[23.75rem] relative bg-grey-white hidden" />
+            <div className="w-screen flex flex-row items-start flex-wrap justify-center py-[0rem] px-20 box-border max-w-full">
+                <div className="w-screen flex flex-wrap flex-col items-center justify-around  gap-[0.125rem] max-w-full">
                     <div className="self-stretch flex flex-row items-start justify-between max-w-full gap-[1.25rem] mq750:flex-wrap">
                         <div className="flex flex-col items-start justify-start py-[0rem] pr-[0.687rem] pl-[0rem] gap-[1rem]">
                             <b className="relative tracking-[0.01em] leading-[1.125rem] inline-block min-w-[4.688rem] z-[1]">
@@ -42,48 +42,48 @@ const Footer = ({ className = "" }) => {
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-60.svg"
+                                    src="/assets/facebook_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-61.svg"
+                                    src="/assets/twitter_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-62.svg"
+                                    src="/assets/instagram_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-63.svg"
+                                    src="/assets/pinterest_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-59.svg"
+                                    src="/assets/google_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-58.svg"
+                                    src="/assets/youtube_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-57.svg"
+                                    src="/assets/telegram_icon.svg"
                                 />
                                 <img
                                     className="h-[1.5rem] w-[1.5rem] relative min-h-[1.5rem] z-[1]"
                                     alt=""
-                                    src="/group-56.svg"
+                                    src="/assets/email_icon.svg"
                                 />
                             </div>
                         </div>
