@@ -18,7 +18,7 @@ const Testimonials1 = ({ className = "" }) => {
                 <img
                     className="absolute top-[2.5rem] left-[28.688rem] w-[3.375rem] h-[3.375rem] overflow-hidden"
                     alt=""
-                    src="/add.svg"
+                    src="/assets/add.svg"
                 />
                 <div className="absolute top-[15.625rem] left-[2.5rem] rounded-lg bg-grey-white box-border w-[7.625rem] h-[2.5rem] whitespace-nowrap text-[0.875rem] text-primary-full border-[1px] border-solid border-primary-full">
                     <div className="absolute top-[0.75rem] left-[1.813rem] leading-[1rem] font-semibold inline-block min-w-[3.938rem]">
@@ -34,7 +34,7 @@ const Testimonials1 = ({ className = "" }) => {
                             <img
                                 className="h-[2.5rem] w-[2.5rem] relative overflow-hidden shrink-0 min-h-[2.5rem]"
                                 alt=""
-                                src="/add-1.svg"
+                                src="/assets/add.svg"
                             />
                             <div className="flex flex-col items-start justify-start pt-[0.125rem] px-[0rem] pb-[0rem]">
                                 <h2 className="m-0 relative text-[1.5rem] font-semibold font-text-sm-bold text-grey-darkest text-left mq450:text-[1.188rem]">

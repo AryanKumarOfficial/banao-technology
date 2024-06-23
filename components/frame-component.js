@@ -2,6 +2,32 @@ import GroupComponent from "./group-component";
 import PropTypes from "prop-types";
 
 const FrameComponent = ({ className = "" }) => {
+    // const features = [
+    //     {
+    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
+    //         people: "People",
+    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
+    //         connect: "Connect",
+    //     },
+    //     {
+    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
+    //         people: "People",
+    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
+    //         connect: "Connect",
+    //     },
+    //     {
+    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
+    //         people: "People",
+    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
+    //         connect: "Connect",
+    //     },
+    //     {
+    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
+    //         people: "People",
+    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
+    //         connect: "Connect",
+    //     },
+    // ]
     return (
         <section
             className={`self-stretch flex flex-row items-start justify-start pt-[0rem] px-[0rem] pb-[1.062rem] box-border max-w-full mt-[-2.063rem] text-left text-[1.5rem] text-base-black font-text-sm-bold ${className}`}
@@ -11,13 +37,13 @@ const FrameComponent = ({ className = "" }) => {
                 <div className="w-[77.5rem] flex flex-col items-start justify-start gap-[1.5rem] max-w-full z-[1]">
                     <div className="self-stretch flex flex-row items-start justify-start gap-[1.5rem] max-w-full mq1050:flex-wrap">
                         <GroupComponent
-                            groupsBlack24dp11="/groups-black-24dp-1-1.svg"
+                            groupsBlack24dp11="/assets/groups.svg"
                             people="People"
                             findATeacherCoachOrExpert="Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator."
                             connect="Connect"
                         />
                         <GroupComponent
-                            groupsBlack24dp11="/location-on-black-24dp-1.svg"
+                            groupsBlack24dp11="/assets/location.svg"
                             people="Place"
                             findATeacherCoachOrExpert="Find a class, school, playground, auditorium, studio, shop or an event venue.  Book a slot at venues that allow booking through hobbycue."
                             connect="Meet up"
@@ -29,7 +55,7 @@ const FrameComponent = ({ className = "" }) => {
                     </div>
                     <div className="self-stretch flex flex-row items-start justify-start gap-[1.5rem] max-w-full mq1050:flex-wrap">
                         <GroupComponent
-                            groupsBlack24dp11="/shopping-basket-black-24dp-2-1.svg"
+                            groupsBlack24dp11="/assets/product.svg"
                             people="Product"
                             findATeacherCoachOrExpert="Find equipment or supplies required for your hobby.  Buy, rent or borrow from shops, online stores or from community members."
                             connect="Get it"
@@ -39,7 +65,7 @@ const FrameComponent = ({ className = "" }) => {
                             propMinWidth1="2.375rem"
                         />
                         <GroupComponent
-                            groupsBlack24dp11="/event-available-black-24dp-2.svg"
+                            groupsBlack24dp11="/assets/program.svg"
                             people="Program"
                             findATeacherCoachOrExpert="Find events, meetups and workshops related to your hobby.  Register or buy tickets online."
                             connect="Attend"

@@ -12,7 +12,7 @@ const Testimonials = ({ className = "" }) => {
                         className="h-[2.5rem] w-[2.5rem] relative overflow-hidden shrink-0 object-contain min-h-[2.5rem] z-[1]"
                         loading="lazy"
                         alt=""
-                        src="/quote@2x.png"
+                        src="/assets/quote.svg"
                     />
                     <div className="flex flex-col items-start justify-start pt-[0.125rem] px-[0rem] pb-[0rem]">
                         <h2 className="m-0 relative text-inherit font-semibold font-inherit z-[1] mq450:text-[1.188rem]">
@@ -43,7 +43,7 @@ const Testimonials = ({ className = "" }) => {
                                     className="absolute top-[0.5rem] left-[0.5rem] w-[1.5rem] h-[1.5rem] overflow-hidden z-[2]"
                                     loading="lazy"
                                     alt=""
-                                    src="/play-arrow-black-24dp-1.svg"
+                                    src="/assets/player.svg"
                                 />
                             </div>
                             <div className="absolute top-[2.75rem] left-[7rem] rounded-[50%] bg-primary-full w-[0.75rem] h-[0.75rem] z-[2]" />
@@ -51,12 +51,12 @@ const Testimonials = ({ className = "" }) => {
                                 className="absolute top-[1.188rem] left-[42.75rem] rounded-[50%] w-[3.75rem] h-[3.75rem] object-contain z-[1]"
                                 loading="lazy"
                                 alt=""
-                                src="/ellipse-26@2x.png"
+                                src="/assets/ellipse.svg"
                             />
                             <img
                                 className="absolute top-[2.938rem] left-[42rem] w-[2rem] h-[2rem] overflow-hidden z-[2]"
                                 alt=""
-                                src="/mic-black-24dp-1.svg"
+                                src="/assets/mic.svg"
                             />
                             <div className="absolute top-[2.625rem] left-[7.375rem] w-[31.625rem] flex flex-row items-start justify-start gap-[0.75rem] max-w-full mq750:flex-wrap">
                                 <div className="flex-1 flex flex-col items-start justify-start pt-[0.437rem] px-[0rem] pb-[0rem] box-border min-w-[19rem] max-w-full">
@@ -72,7 +72,7 @@ const Testimonials = ({ className = "" }) => {
                                 className="h-[6.25rem] w-[6.25rem] relative rounded-[50%] object-cover z-[1] mq450:flex-1"
                                 loading="lazy"
                                 alt=""
-                                src="/ellipse-12@2x.png"
+                                src="/assets/ellipse.png"
                             />
                             <div className="flex flex-col items-start justify-start pt-[1.5rem] px-[0rem] pb-[0rem]">
                                 <div className="flex flex-col items-start justify-start gap-[0.25rem]">
