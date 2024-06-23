@@ -28,7 +28,7 @@ const End = ({ className = "" }) => {
                                     className="h-full w-full z-[2] object-contain absolute left-[0rem] top-[0.5rem] [transform:scale(1.6)]"
                                     loading="lazy"
                                     alt=""
-                                    src="/group-77.svg"
+                                    src="/assets/top.svg"
                                 />
                             </div>
                         </div>
@@ -46,14 +46,14 @@ const End = ({ className = "" }) => {
                         className="self-stretch flex-1 relative max-w-full overflow-hidden max-h-full z-[1] lg:self-stretch lg:w-auto"
                         loading="lazy"
                         alt=""
-                        src="/5820098-1.svg"
+                        src="/assets/group-1.svg"
                     />
                 </div>
                 <img
                     className="h-[18.875rem] flex-1 relative max-w-full overflow-hidden min-w-[25.938rem] z-[1] mq750:min-w-full"
                     loading="lazy"
                     alt=""
-                    src="/5820000-1.svg"
+                    src="/assets/group-2.svg"
                 />
             </div>
         </div>
