@@ -1,11 +1,22 @@
+import Link from "next/link";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 const LoginComponent = ({ className = "" }) => {
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(!isPasswordVisible);
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form Submitted');
+    }
     return (
         <section
             className={`self-stretch flex flex-row items-start justify-start pt-[0rem] px-[0rem] pb-[1.687rem] box-border max-w-full ${className}`}
         >
-            <form className="m-0 flex-1 bg-purple-3 flex flex-col items-center justify-start pt-[6.25rem] px-[1.25rem] pb-[0rem] box-border gap-[1.5rem] shrink-0 max-w-full z-[2] mq750:pt-[4.063rem] mq750:box-border">
+            <form className="m-0 flex-1 bg-purple-3 flex flex-col items-center justify-start pt-[6.25rem] px-[1.25rem] pb-[0rem] box-border gap-[1.5rem] shrink-0 max-w-full z-[2] mq750:pt-[4.063rem] mq750:box-border" onSubmit={handleSubmit}>
                 <div className="w-[90rem] h-[42.375rem] relative bg-purple-3 hidden max-w-full" />
                 <div className="w-[77.5rem] flex flex-row items-start justify-between max-w-full gap-[1.25rem] lg:flex-wrap">
                     <div className="w-[44.188rem] flex flex-col items-start justify-start gap-[2rem] min-w-[44.188rem] max-w-full lg:flex-1 mq750:gap-[1rem] mq1050:min-w-full">
@@ -16,7 +27,7 @@ const LoginComponent = ({ className = "" }) => {
                             <span className="text-primary-full">passion</span>
                         </h1>
                         <div className="self-stretch flex flex-col items-start justify-start gap-[1rem] max-w-full">
-                            <div className="self-stretch relative text-[0.875rem] tracking-[0.02em] leading-[1.875rem] font-light font-text-sm-bold text-base-black text-left z-[1]">
+                            <div className="self-stretch relative text-[0.875rem] tracking-[0.02em] leading-[1.875rem] font-light font-text-sm-bold text-base-black text-justify z-[1]">
                                 Sign-in to interact with a community of fellow hobbyists and an
                                 eco-system of experts, teachers, suppliers, classes, workshops,
                                 and places to practice, participate or perform. Your hobby may
@@ -24,7 +35,7 @@ const LoginComponent = ({ className = "" }) => {
                                 model making, cooking, indoor or outdoor activities…
                             </div>
                             <div className="self-stretch flex flex-row items-start justify-start py-[0rem] pr-[0rem] pl-[0.062rem] box-border max-w-full">
-                                <div className="flex-1 relative text-[0.875rem] tracking-[0.02em] leading-[1.875rem] font-light font-text-sm-bold text-base-black whitespace-pre-wrap text-left inline-block max-w-full z-[1]">
+                                <div className="flex-1 relative text-[0.875rem] tracking-[0.02em] leading-[1.875rem] font-light font-text-sm-bold text-base-black whitespace-pre-wrap text-justify inline-block max-w-full z-[1] ">
                                     If you are an expert or a seller, you can Add your Listing and
                                     promote yourself, your students, products, services or events.
                                     Hop on your hobbyhorse and enjoy the ride.
@@ -50,23 +61,23 @@ const LoginComponent = ({ className = "" }) => {
                             </div>
                             <div className="self-stretch flex flex-col items-start justify-start gap-[1.75rem]">
                                 <div className="self-stretch flex flex-col items-start justify-start gap-[1rem]">
-                                    <button className="cursor-pointer py-[0.625rem] px-[1.5rem] bg-purple-3 self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-start gap-[5.5rem] whitespace-nowrap z-[1] border-[1px] border-solid border-primary-full hover:bg-gainsboro-400 hover:box-border hover:border-[1px] hover:border-solid hover:border-plum mq450:gap-[2.75rem]">
+                                    <button className="cursor-pointer py-[0.625rem] px-[1.5rem] bg-purple-3 self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-start gap-[5.5rem] whitespace-nowrap z-[1] border-[1px] border-solid border-primary-full hover:bg-plum hover:text-white hover:box-border hover:border-[1px] hover:border-solid hover:border-plum mq450:gap-[2.75rem]">
                                         <img
                                             className="h-[1rem] w-[1rem] relative overflow-hidden shrink-0 min-h-[1rem]"
                                             alt=""
                                             src="/assets/google.svg"
                                         />
-                                        <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold text-grey-darkest text-left">
+                                        <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold  text-left">
                                             Continue with Google
                                         </div>
                                     </button>
-                                    <button className="cursor-pointer py-[0.625rem] px-[1.5rem] bg-purple-3 self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-start gap-[4.937rem] whitespace-nowrap z-[1] border-[1px] border-solid border-primary-full hover:bg-gainsboro-400 hover:box-border hover:border-[1px] hover:border-solid hover:border-plum mq450:gap-[2.438rem]">
+                                    <button className="cursor-pointer py-[0.625rem] px-[1.5rem] bg-purple-3 self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-start gap-[4.937rem] whitespace-nowrap z-[1] border-[1px] border-solid border-primary-full hover:bg-plum hover:text-white hover:box-border hover:border-[1px] hover:border-solid hover:border-plum mq450:gap-[2.438rem]">
                                         <img
                                             className="h-[1rem] w-[1rem] relative overflow-hidden shrink-0 min-h-[1rem]"
                                             alt=""
                                             src="/assets/facebook.svg"
                                         />
-                                        <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold text-grey-darkest text-left">
+                                        <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold  text-left">
                                             Continue with Facebook
                                         </div>
                                     </button>
@@ -83,22 +94,34 @@ const LoginComponent = ({ className = "" }) => {
                                     </div>
                                 </div>
                                 <div className="self-stretch flex flex-col items-start justify-start gap-[1rem]">
-                                    <div className="self-stretch rounded-lg bg-grey-white overflow-hidden flex flex-row items-start justify-start py-[0.625rem] px-[0.75rem] z-[1] border-[1px] border-solid border-grey-lighter">
+                                    <div className="self-stretch rounded-lg bg-grey-white overflow-hidden flex flex-row items-start justify-start py-2 px-3 z-[1] border border-solid border-grey-lighter focus-within:border-primary-full focus-within:ring focus-within:ring-purple-2">
                                         <input
-                                            className="w-[2.063rem] [border:none] [outline:none] font-text-sm-bold text-[0.75rem] bg-[transparent] h-[1rem] relative leading-[1rem] text-darkgray text-left inline-block p-0"
+                                            className="w-full border-none outline-none font-text-sm-bold text-[0.75rem] bg-transparent h-1 leading-4 text-darkgray text-left p-2  "
                                             placeholder="Email"
                                             type="text"
+                                            aria-label="Email"
                                         />
                                     </div>
-                                    <div className="self-stretch rounded-lg bg-grey-white overflow-hidden flex flex-row items-start justify-between py-[0.625rem] pr-[0.812rem] pl-[0.687rem] gap-[1.25rem] z-[1] border-[1px] border-solid border-grey-lighter">
-                                        <div className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold text-darkgray text-left inline-block min-w-[3.625rem]">
-                                            Password
-                                        </div>
-                                        <img
-                                            className="h-[1rem] w-[1rem] relative overflow-hidden shrink-0 min-h-[1rem]"
-                                            alt=""
-                                            src="/assets/password.svg"
+
+                                    <div className="self-stretch rounded-lg bg-grey-white overflow-hidden flex flex-row items-center justify-between py-2 pr-3 pl-2 gap-4 z-[1] border border-solid border-grey-lighter focus-within:border-primary-full focus-within:ring focus-within:ring-purple-2">
+                                        <input
+                                            className="w-full border-none outline-none font-text-sm-bold text-[0.75rem] bg-transparent h-2 leading-4 text-darkgray text-left p-2"
+                                            placeholder="Password"
+                                            type={isPasswordVisible ? "text" : "password"}
+                                            aria-label="Password"
                                         />
+                                        <button
+                                            type="button"
+                                            onClick={togglePasswordVisibility}
+                                            className="focus:outline-none bg-transparent border-none cursor-pointer"
+                                            aria-label={isPasswordVisible ? "Hide password" : "Show password"}
+                                        >
+                                            <img
+                                                className="h-4 w-4 relative overflow-hidden"
+                                                alt={isPasswordVisible ? "Hide password" : "Show password"}
+                                                src={`/assets/${isPasswordVisible ? "eye-on.svg" : "password.svg"}`}
+                                            />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -126,26 +149,27 @@ const LoginComponent = ({ className = "" }) => {
                         <div className="self-stretch flex flex-row items-start justify-between gap-[1.25rem] mq450:flex-wrap">
                             <div className="flex flex-row items-start justify-start gap-[0.5rem]">
                                 <input
-                                    className="m-0 h-[1rem] w-[1rem] relative z-[1]"
+                                    className="m-0 h-[1rem] w-[1rem] relative z-[1] accent-plum"
                                     type="checkbox"
+                                    id="remember-me"
                                 />
-                                <div className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold text-base-black text-left inline-block min-w-[5.75rem] z-[1]">
+                                <label htmlFor="remember-me" className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold text-plum font-semibold text-left inline-block min-w-[5.75rem] z-[1]">
                                     Remember me
-                                </div>
+                                </label>
                             </div>
-                            <div className="flex flex-row items-start justify-start gap-[0.487rem]">
+                            <Link href={'/forget'} className="flex flex-row items-start justify-start gap-[0.487rem] no-underline text-plum hover:text-primary-full">
                                 <img
                                     className="h-[1rem] w-[0.988rem] relative overflow-hidden shrink-0 min-h-[1rem] z-[1]"
                                     alt=""
                                     src="/assets/lock_black.svg"
                                 />
-                                <div className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold text-base-black text-left inline-block min-w-[6.713rem] shrink-0 z-[1]">
+                                <div className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold font-bold text-left inline-block min-w-[6.713rem] shrink-0 z-[1]">
                                     Forgot password?
                                 </div>
-                            </div>
+                            </Link>
                         </div>
-                        <button className="cursor-pointer py-[0.625rem] px-[1.25rem] bg-[transparent] self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-center z-[1] border-[1px] border-solid border-base-black hover:bg-darkslategray-500 hover:box-border hover:border-[1px] hover:border-solid hover:border-darkslategray-400">
-                            <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold text-base-black text-left inline-block min-w-[4.125rem]">
+                        <button type="submit" className="cursor-pointer py-[0.625rem] px-[1.25rem] bg-[transparent] self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-center z-[1] border-[1px] border-solid border-base-black hover:bg-[#8064a2] hover:!text-white hover:box-border hover:border-transparent transition-colors duration-500">
+                            <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold  text-left inline-block min-w-[4.125rem]">
                                 Continue
                             </div>
                         </button>

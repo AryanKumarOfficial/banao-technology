@@ -17,13 +17,15 @@ const Navbar = ({ className = "" }) => {
     >
       <header className="flex-1 flex flex-wrap flex-row items-start mq450:items-center justify-center py-[0.625rem] px-[1.25rem] box-border relative gap-[5.625rem] max-w-full text-left text-[0.75rem] text-darkgray font-text-sm-bold mq750:gap-[2.813rem] mq450:gap-[1.375rem] mq450:px-[0rem]">
         <div className="h-full w-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem]  bg-grey-white" />
-        <div className="w-[39.25rem] flex flex-wrap flex-row mq450:flex-row items-start justify-start gap-[2.168rem] max-w-full mq750:gap-[1.063rem] mq450:items-center">
-          <img
-            className="h-[3.75rem] w-[18.331rem] relative object-cover z-[1] mq450:w-[9rem] mq450:h-[1.875rem] mq750:w-[18rem] mq750:h-[3.75rem] mq750:object-cover"
-            loading="lazy"
-            alt=""
-            src={`/assets/logo.png`}
-          />
+        <div href={'/'} className="w-[39.25rem] flex flex-wrap flex-row mq450:flex-row items-start justify-start gap-[2.168rem] max-w-full mq750:gap-[1.063rem] mq450:items-center">
+          <Link href="/">
+            <img
+              className="h-[3.75rem] w-[18.331rem] relative object-cover z-[1] mq450:w-[9rem] mq450:h-[1.875rem] mq750:w-[18rem] mq750:h-[3.75rem] mq750:object-cover"
+              loading="lazy"
+              alt=""
+              src={`/assets/logo.png`}
+            />
+          </Link>
           <div className="flex-1 flex flex-col items-start justify-start pt-[0.625rem] px-[0rem] pb-[0rem]">
             <div className="self-stretch flex flex-row items-start justify-between py-[0rem] pr-[0rem] pl-[0.75rem] relative gap-[1.25rem] mq450:gap-1 mq450:pl-0 z-[1] mq450:hidden">
               <div className="h-full w-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem] rounded-lg bg-grey-hover box-border mix-blend-normal border-[1px] border-solid border-grey-lighter mq450:hidden" />
@@ -82,7 +84,7 @@ const Navbar = ({ className = "" }) => {
                   onClick={() => {
                     const sidebar = document.querySelector(`.${styles.sidebar}`);
                     sidebar.classList.remove(`${styles.sidebar__active}`);
-                   }}
+                  }}
                 >
                   <img
                     className={`${styles.sidebar__content__header__logo__img}`}
@@ -92,7 +94,7 @@ const Navbar = ({ className = "" }) => {
                 </Link>
               </div>
               <div className={`${styles.sidebar__content__header__close}`}
-                onclick={hanlderMenuClick}
+                onClick={hanlderMenuClick}
               >
                 <img
                   className={`${styles.sidebar__content__header__close__img}`}
