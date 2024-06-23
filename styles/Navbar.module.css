@@ -1,0 +1,159 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar .sidebar__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .sidebar__content .sidebar__content__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.sidebar .sidebar__content .sidebar__content__header .sidebar__content__header__logo {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease;
+    top: 10px;
+}
+
+.sidebar .sidebar__content .sidebar__content__header .sidebar__content__header__logo_img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sidebar .sidebar__content .sidebar__content__header .sidebar__content__header__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .sidebar__content .sidebar__content__header .sidebar__content__header__close .sidebar__content__header__close__img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.sidebar .sidebar__content .sidebar__content__header .sidebar__content__header__close:hover {
+    background-color: #d1d5db;
+}
+
+.sidebar .sidebar__content .sidebar__content__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .sidebar__content .sidebar__content__search .sidebar__content__search__input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    outline: none;
+}
+
+.sidebar .sidebar__content .sidebar__content__search .sidebar__content__search__input::placeholder {
+    color: #333;
+}
+
+.sidebar .sidebar__content .sidebar__content__search .sidebar__content__search__img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.sidebar .sidebar__content .sidebar__content__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.sidebar .sidebar__content .sidebar__content__menu .sidebar__content__menu__item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 75%;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .sidebar__content .sidebar__content__menu .sidebar__content__menu__item:hover {
+    background-color: #d1d5db;
+}
+
+.sidebar .sidebar__content .sidebar__content__menu .sidebar__content__menu__item .sidebar__content__menu__item__img {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.sidebar .sidebar__content .sidebar__content__menu .sidebar__content__menu__item .sidebar__content__menu__item__text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.sidebar .sidebar__content .sidebar__content__signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .sidebar__content .sidebar__content__signin .sidebar__content__signin__text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8064a2;
+    margin-bottom: 10px;
+    border: 1px solid #8064a2;
+    padding: 16px 32px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .sidebar__content .sidebar__content__signin .sidebar__content__signin__text:hover {
+    background-color: #8064a2;
+    color: #fff;
+}
+
+.sidebar__active {
+    transform: translateX(0);
+}

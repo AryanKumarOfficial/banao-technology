@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const FrameComponent1 = ({ className = "" }) => {
+const LoginComponent = ({ className = "" }) => {
     return (
         <section
             className={`self-stretch flex flex-row items-start justify-start pt-[0rem] px-[0rem] pb-[1.687rem] box-border max-w-full ${className}`}
@@ -156,8 +156,8 @@ const FrameComponent1 = ({ className = "" }) => {
     );
 };
 
-FrameComponent1.propTypes = {
+LoginComponent.propTypes = {
     className: PropTypes.string,
 };
 
-export default FrameComponent1;
+export default LoginComponent;
