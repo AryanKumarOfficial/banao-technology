@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Logo from "@/public/assets/logo.png";
 import { useState } from "react";
 import styles from "@/styles/Navbar.module.css";
 import Link from "next/link";
@@ -15,6 +14,22 @@ const Navbar = ({ className = "" }) => {
     <div
       className={`self-stretch flex flex-wrap flex-row items-start justify-start pt-[0rem] px-[0rem] pb-[0.375rem] box-border top-[0] z-[99] sticky max-w-full ${className} mq450:px-[1.25rem] mq750:px-[2.5rem] mq450:pb-[0.625rem] mq750:pb-[0.75rem] mq450:pt-[0.25rem] mq750:pt-[0.5rem] mq450:top-[0] mq750:top-[0] mq450:z-[99] mq750:z-[99] mq450:sticky mq750:sticky mq450:gap-[1.375rem] mq750:gap-[2.813rem]`}
     >
+      <style jsx>
+        {`
+        div:has(> img) {
+        cursor: pointer;
+        }
+
+        img {
+        transition: transform 1s ease-in-out;
+        }
+
+        img:hover {
+        transform: scale(1.25);
+        }
+
+        `}
+      </style>
       <header className="flex-1 flex flex-wrap flex-row items-start mq450:items-center justify-center py-[0.625rem] px-[1.25rem] box-border relative gap-[5.625rem] max-w-full text-left text-[0.75rem] text-darkgray font-text-sm-bold mq750:gap-[2.813rem] mq450:gap-[1.375rem] mq450:px-[0rem]">
         <div className="h-full w-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem]  bg-grey-white" />
         <div href={'/'} className="w-[39.25rem] flex flex-wrap flex-row mq450:flex-row items-start justify-start gap-[2.168rem] max-w-full mq750:gap-[1.063rem] mq450:items-center">
@@ -76,6 +91,7 @@ const Navbar = ({ className = "" }) => {
           </div>
 
         </div>
+        {/* sidebar */}
         <div className={`${styles.sidebar}`}>
           <div className={`${styles.sidebar__content}`}>
             <div className={`${styles.sidebar__content__header}`}>
@@ -239,7 +255,7 @@ const Navbar = ({ className = "" }) => {
                 src="/assets/bookmark.svg"
               />
             </div>
-            <div className="flex flex-col items-start justify-start pt-[0.5rem] px-[0rem] pb-[0rem]">
+            <div className="flex flex-col items-start justify-start pt-[0.5rem] px-[0rem] pb-[0rem] group cursor-pointer">
               <img
                 className="w-[1.5rem] h-[1.5rem] relative overflow-hidden shrink-0"
                 loading="lazy"
@@ -255,11 +271,11 @@ const Navbar = ({ className = "" }) => {
               />
             </div>
             <div className="flex flex-row items-start justify-start text-primary-full">
-              <div className="flex flex-row items-start justify-start pt-[0.625rem] px-[2rem] pb-[0.875rem] relative whitespace-nowrap">
-                <div className="h-full w-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem] rounded-lg bg-grey-white box-border border-[1px] border-solid border-primary-full" />
-                <a className="[text-decoration:none] relative leading-[1rem] font-semibold text-[inherit] inline-block min-w-[3rem] z-[1]">
+              <div className="flex flex-row items-start justify-start pt-[0.625rem] px-[2rem] pb-[0.875rem] relative whitespace-nowrap group ">
+                <div className="h-full w-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem] rounded-lg bg-grey-white box-border border-[1px] border-solid border-primary-full group-hover:border-transparent group-hover:bg-primary-full cursor-pointer transition-colors duration-500" />
+                <Link href={'/'} className="[text-decoration:none]  relative leading-[1rem] font-semibold text-[inherit] inline-block min-w-[3rem] z-[1] group-hover:text-white transition-colors duration-500">
                   Sign In
-                </a>
+                </Link>
               </div>
             </div>
           </div>
