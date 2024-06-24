@@ -234,7 +234,23 @@ const LoginComponent = ({ className = "" }) => {
                                         </div>
                                     </div>
                                 )}
-                                
+
+                            </div>
+                        </div>
+                        <div className="w-[43.569rem] hidden flex-col items-start justify-start pt-[0.312rem] px-[0rem] pb-[0rem] box-border min-w-[43.569rem] max-w-full lg:flex-1 mq1050:min-w-full mq450:order-4 mq450:flex">
+                            <div className="self-stretch flex flex-row items-start justify-start gap-[0.9rem] max-w-full mq750:flex-wrap mq450:flex-row">
+                                <img
+                                    className="self-stretch flex-1 relative max-w-full overflow-hidden max-h-full min-w-[5rem] min-h-[13.5rem] shrink-0 z-[1]"
+                                    loading="lazy"
+                                    alt=""
+                                    src="/assets/people1.svg"
+                                />
+                                <img
+                                    className="self-stretch flex-1 relative max-w-full overflow-hidden max-h-full min-w-[5rem] min-h-[13.5rem] shrink-0 z-[1]"
+                                    loading="lazy"
+                                    alt=""
+                                    src="/assets/people2.svg"
+                                />
                             </div>
                         </div>
                     </div>
