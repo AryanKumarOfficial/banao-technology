@@ -43,7 +43,7 @@ const GroupComponent = ({
         >
             <div className="w-[38rem] h-[18.563rem] relative rounded-lg bg-grey-white box-border hidden max-w-full border-[1px] border-solid border-grey-light" />
             <div className="self-stretch flex flex-col items-start justify-start gap-[1.5rem]">
-                <div className="flex flex-row items-start justify-start gap-[1.5rem]">
+                <div className="flex flex-row items-start justify-start gap-[1.5rem] mq450:justify-center mq450:items-center mq450:w-full">
                     <img
                         className="h-[2.5rem] w-[2.5rem] relative overflow-hidden shrink-0 min-h-[2.5rem] z-[1]"
                         loading="lazy"
@@ -64,11 +64,11 @@ const GroupComponent = ({
                 </div>
             </div>
             <button
-                className="cursor-pointer py-[0.625rem] pr-[1.812rem] pl-[1.875rem] bg-grey-white rounded-lg flex flex-row items-start justify-start z-[1] border-[1px] border-solid border-primary-full hover:bg-gainsboro-300 hover:box-border hover:border-[1px] hover:border-solid hover:border-plum"
+                className="cursor-pointer py-[0.625rem] pr-[1.812rem] pl-[1.875rem] bg-grey-white rounded-lg flex flex-row items-start justify-start z-[1] border-[1px] border-solid border-primary-full hover:bg-primary-full text-primary-full hover:text-white hover:box-border hover:border-[1px] hover:border-solid hover:border-plum mq450:justify-center mq450:items-center mq450:w-full mq450:py-[0.625rem] mq450:pr-[1.313rem] mq450:pl-[1.313rem] mq450:gap-[0.5rem] mq450:box-border"
                 style={frameButtonStyle}
             >
                 <div
-                    className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold text-primary-full text-left inline-block min-w-[3.813rem]"
+                    className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold  text-left inline-block min-w-[3.813rem]"
                     style={connectStyle}
                 >
                     {connect}

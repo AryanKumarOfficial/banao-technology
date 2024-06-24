@@ -165,7 +165,7 @@ const LoginComponent = ({ className = "" }) => {
                                             </button>
                                         </div>
                                         <div className="w-full flex flex-col gap-10 items-start justify-between mq450:w-full">
-                                            <div className="self-stretch flex flex-row items-center justify-between w-[25rem] gap-[1.25rem] mq450:flex-wrap">
+                                            <div className="self-stretch flex flex-row items-center justify-between w-[25rem] gap-[1.25rem] mq450:flex-wrap mq450:w-80">
                                                 <div className="flex flex-row items-start justify-start gap-[0.5rem]">
                                                     <input
                                                         className="m-0 h-[1rem] w-[1rem] relative z-[1] accent-plum"
@@ -207,7 +207,7 @@ const LoginComponent = ({ className = "" }) => {
                                         </div>
 
                                         <div className="self-stretch flex justify-between items-center flex-row gap-2">
-                                            <div className="relative w-56 h-2 bg-gray-200 rounded">
+                                            <div className="relative w-56 mq450:w-96 h-2 bg-gray-200 rounded">
                                                 <div
                                                     className={`h-full rounded ${getPasswordStrengthColor(passwordScore)}`}
                                                     style={{ width: getPasswordStrengthWidth(passwordScore) }}
@@ -215,12 +215,12 @@ const LoginComponent = ({ className = "" }) => {
                                                 <div className="absolute top-0 left-1/3 w-0.5 h-full bg-white"></div>
                                                 <div className="absolute top-0 left-2/3 w-0.5 h-full bg-white"></div>
                                             </div>
-                                            <div className=" flex justify-center items-center text-[0.75rem] leading-[1rem] font-semibold font-text-sm-bold text-darkgray text-left  min-w-[6.063rem]">
+                                            <div className=" flex justify-center items-center text-[0.75rem] leading-[1rem] font-semibold font-text-sm-bold text-darkgray text-left  min-w-[6.063rem] mq450:w-full">
                                                 Password Strength
                                             </div>
                                         </div>
                                         <div className="w-[10rem] flex flex-col gap-10 items-start justify-between mq450:w-full text-sm">
-                                            <div className="self-stretch  flex-col items-center justify-between w-[25rem] gap-[1.25rem] mq450:flex-wrap text-wrap mq450:text-[0.60rem]">
+                                            <div className="self-stretch  flex-col items-center justify-between w-[25rem] text-grey-darker gap-[1.25rem] mq450:flex-wrap text-wrap mq450:text-[0.60rem]">
                                                 By continuing, you agree to our <Link href={'/terms'} className="text-darkslategray-400 font-bold no-underline hover:text-primary-full">Terms of Service</Link> and <Link href={'/privacy'} className="text-darkslategray-400 hover:text-primary-full no-underline font-bold">Privacy Policy</Link>.
                                             </div>
                                         </div>

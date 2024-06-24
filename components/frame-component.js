@@ -2,32 +2,6 @@ import GroupComponent from "./group-component";
 import PropTypes from "prop-types";
 
 const FrameComponent = ({ className = "" }) => {
-    // const features = [
-    //     {
-    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
-    //         people: "People",
-    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
-    //         connect: "Connect",
-    //     },
-    //     {
-    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
-    //         people: "People",
-    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
-    //         connect: "Connect",
-    //     },
-    //     {
-    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
-    //         people: "People",
-    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
-    //         connect: "Connect",
-    //     },
-    //     {
-    //         groupsBlack24dp11: "/groups-black-24dp-1-1.svg",
-    //         people: "People",
-    //         findATeacherCoachOrExpert: "Find a teacher, coach, or expert for your hobby interest in your locality.  Find a partner, teammate, accompanist or collaborator.",
-    //         connect: "Connect",
-    //     },
-    // ]
     return (
         <section
             className={`self-stretch flex flex-row items-start justify-start pt-[0rem] px-[0rem] pb-[1.062rem] box-border max-w-full mt-[-2.063rem] text-left text-[1.5rem] text-base-black font-text-sm-bold ${className}`}
@@ -35,7 +9,7 @@ const FrameComponent = ({ className = "" }) => {
             <div className="flex-1 bg-grey-white flex flex-row items-start justify-center py-[6.25rem] px-[1.25rem] box-border shrink-0 max-w-full mq1050:pt-[3.313rem] mq1050:pb-[4.063rem] mq1050:box-border mq450:pb-[2.625rem] mq450:box-border">
                 <div className="h-[51.125rem] w-[90rem] relative bg-grey-white hidden max-w-full" />
                 <div className="w-[77.5rem] flex flex-col items-start justify-start gap-[1.5rem] max-w-full z-[1]">
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[1.5rem] max-w-full mq1050:flex-wrap">
+                    <div className="self-stretch grid-flow-row-dense  grid grid-cols-2  items-start justify-start gap-[1.5rem] max-w-full mq1050:flex-wrap mq450:grid-flow-col-dense mq450:grid-rows-4 mq450:min-w-[90vh] ">
                         <GroupComponent
                             groupsBlack24dp11="/assets/groups.svg"
                             people="People"
@@ -52,8 +26,6 @@ const FrameComponent = ({ className = "" }) => {
                             propPadding="0.625rem 1.937rem"
                             propMinWidth1="3.625rem"
                         />
-                    </div>
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[1.5rem] max-w-full mq1050:flex-wrap">
                         <GroupComponent
                             groupsBlack24dp11="/assets/product.svg"
                             people="Product"
