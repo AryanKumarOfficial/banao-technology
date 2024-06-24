@@ -1,10 +1,14 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import zxcvbn from "zxcvbn";
 
 const LoginComponent = ({ className = "" }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isSignInVisible, setIsSignInVisible] = useState(true);
+    const [passwordScore, setPasswordScore] = useState(0);
+    const [password, setPassword] = useState("");
+
 
     const togglePasswordVisibility = () => {
         setIsPasswordVisible(!isPasswordVisible);
@@ -15,9 +19,67 @@ const LoginComponent = ({ className = "" }) => {
         console.log('Form Submitted');
     };
 
+    const handlePasswordChange = (e) => {
+        const passwordValue = e.target.value;
+        setPassword(passwordValue);
+        const passwordStrength = zxcvbn(passwordValue);
+        setPasswordScore(passwordStrength.score);
+    };
+
     const toggleForm = (isSignIn) => {
         setIsSignInVisible(isSignIn);
     };
+
+    const getPasswordStrength = (score) => {
+        switch (score) {
+            case 0:
+                return "Very Weak";
+            case 1:
+                return "Weak";
+            case 2:
+                return "Fair";
+            case 3:
+                return "Good";
+            case 4:
+                return "Strong";
+            default:
+                return "";
+        }
+    };
+
+    const getPasswordStrengthColor = (score) => {
+        switch (score) {
+            case 1:
+                return "bg-red-500";
+            case 2:
+                return "bg-orange-500";
+            case 3:
+                return "bg-orange-500";
+            case 4:
+                return "bg-green-500";
+            default:
+                return "bg-gray-300";
+        }
+    };
+
+    const getPasswordStrengthWidth = (score) => {
+        switch (score) {
+            case 0:
+                return "20%";
+            case 1:
+                return "40%";
+            case 2:
+                return "60%";
+            case 3:
+                return "80%";
+            case 4:
+                return "100%";
+            default:
+                return "0%";
+        }
+    };
+
+
     return (
         <section
             className={`self-stretch flex flex-row items-start justify-start pt-[0rem] px-[0rem] pb-[1.687rem] box-border max-w-full ${className}`}
@@ -102,7 +164,7 @@ const LoginComponent = ({ className = "" }) => {
                                                 <img className="w-full h-full object-cover" alt="" src={isPasswordVisible ? "/assets/eye-on.svg" : "/assets/password.svg"} />
                                             </button>
                                         </div>
-                                        <div className="w-[15.75rem] flex flex-col gap-10 items-start justify-between mq450:w-full">
+                                        <div className="w-full flex flex-col gap-10 items-start justify-between mq450:w-full">
                                             <div className="self-stretch flex flex-row items-center justify-between w-[25rem] gap-[1.25rem] mq450:flex-wrap">
                                                 <div className="flex flex-row items-start justify-start gap-[0.5rem]">
                                                     <input
@@ -110,7 +172,7 @@ const LoginComponent = ({ className = "" }) => {
                                                         type="checkbox"
                                                         id="remember-me"
                                                     />
-                                                    <label htmlFor="remember-me" className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold text-plum font-semibold text-left inline-block min-w-[5.75rem] z-[1]">
+                                                    <label htmlFor="remember-me" className="relative text-[0.75rem] leading-[1rem] font-text-sm-bold text-plum cursor-pointer font-semibold text-left inline-block min-w-[5.75rem] z-[1] hover:text-primary-full transition-colors duration-300">
                                                         Remember me
                                                     </label>
                                                 </div>
@@ -125,8 +187,10 @@ const LoginComponent = ({ className = "" }) => {
                                                     </div>
                                                 </Link>
                                             </div>
-                                            <button type="submit" className="cursor-pointer py-[0.625rem] px-[1.5rem] bg-primary-full rounded-lg overflow-hidden flex flex-row items-center justify-center w-full gap-[4.937rem] whitespace-nowrap z-[1] hover:bg-primary-hover">
-                                                <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold text-white text-left w-[]">Sign In</div>
+                                            <button type="submit" className="cursor-pointer py-[0.625rem] px-[1.25rem] bg-[transparent] self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-center z-[1] border-[1px] border-solid border-primary-full text-primary-full hover:bg-[#8064a2] hover:!text-white hover:box-border hover:border-transparent transition-colors duration-500">
+                                                <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold  text-left inline-block min-w-[4.125rem]">
+                                                    Conntinue
+                                                </div>
                                             </button>
                                         </div>
                                     </div>
@@ -136,15 +200,36 @@ const LoginComponent = ({ className = "" }) => {
                                             <input className="w-full border-none outline-none font-text-sm-bold text-[0.75rem] bg-transparent h-1 leading-4 text-darkgray text-left p-2" placeholder="Email" type="text" aria-label="Email" />
                                         </div>
                                         <div className="self-stretch rounded-lg bg-grey-white overflow-hidden flex flex-row items-start justify-start py-2 px-3 z-[1] border border-solid border-grey-lighter focus-within:border-primary-full focus-within:ring focus-within:ring-purple-2">
-                                            <input className="w-full border-none outline-none font-text-sm-bold text-[0.75rem] bg-transparent h-1 leading-4 text-darkgray text-left p-2" placeholder="Password" type={isPasswordVisible ? "text" : "password"} aria-label="Password" />
+                                            <input onChange={handlePasswordChange} className="w-full border-none outline-none font-text-sm-bold text-[0.75rem] bg-transparent h-1 leading-4 text-darkgray text-left p-2" placeholder="Password" value={password} type={isPasswordVisible ? "text" : "password"} aria-label="Password" />
                                             <button type="button" onClick={togglePasswordVisibility} className="cursor-pointer  overflow-hidden shrink-0 bg-transparent relative">
                                                 <img className="w-full h-full object-cover" alt="" src={isPasswordVisible ? "/assets/eye-on.svg" : "/assets/password.svg"} />
                                             </button>
                                         </div>
-                                        <div className="w-[15.75rem] flex flex-row items-start justify-between mq450:w-full">
-                                            <div className="cursor-pointer relative text-[0.75rem] font-semibold font-text-sm-bold text-primary-full text-left hover:text-primary-hover">Forgot password?</div>
-                                            <button type="submit" className="cursor-pointer py-[0.625rem] px-[1.5rem] bg-primary-full rounded-lg overflow-hidden flex flex-row items-start justify-start gap-[4.937rem] whitespace-nowrap z-[1] hover:bg-primary-hover">
-                                                <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold text-white text-left">Join In</div>
+
+                                        <div className="self-stretch flex justify-between items-center flex-row gap-2">
+                                            <div className="relative w-56 h-2 bg-gray-200 rounded">
+                                                <div
+                                                    className={`h-full rounded ${getPasswordStrengthColor(passwordScore)}`}
+                                                    style={{ width: getPasswordStrengthWidth(passwordScore) }}
+                                                ></div>
+                                                <div className="absolute top-0 left-1/3 w-0.5 h-full bg-white"></div>
+                                                <div className="absolute top-0 left-2/3 w-0.5 h-full bg-white"></div>
+                                            </div>
+                                            <div className=" flex justify-center items-center text-[0.75rem] leading-[1rem] font-semibold font-text-sm-bold text-darkgray text-left  min-w-[6.063rem]">
+                                                Password Strength
+                                            </div>
+                                        </div>
+                                        <div className="w-[10rem] flex flex-col gap-10 items-start justify-between mq450:w-full text-sm">
+                                            <div className="self-stretch  flex-col items-center justify-between w-[25rem] gap-[1.25rem] mq450:flex-wrap ">
+                                                By continuing, you agree to our <Link href={'/terms'} className="text-darkslategray-400 font-bold no-underline hover:text-primary-full">Terms of Service</Link> and <Link href={'/privacy'} className="text-darkslategray-400 hover:text-primary-full no-underline font-bold">Privacy Policy</Link>.
+                                            </div>
+                                        </div>
+
+                                        <div className="w-full flex flex-col gap-10 items-start justify-between mq450:w-full">
+                                            <button type="submit" className="cursor-pointer py-[0.625rem] px-[1.25rem] bg-[transparent] self-stretch rounded-lg overflow-hidden flex flex-row items-start justify-center z-[1] border-[1px] border-solid border-primary-full text-primary-full hover:bg-[#8064a2] hover:!text-white hover:box-border hover:border-transparent transition-colors duration-500">
+                                                <div className="relative text-[0.875rem] leading-[1rem] font-semibold font-text-sm-bold  text-left inline-block min-w-[4.125rem]">
+                                                    Agree and Conntinue
+                                                </div>
                                             </button>
                                         </div>
                                     </div>
